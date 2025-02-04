@@ -6,6 +6,9 @@ body {
     background-color: red;
 }
 
+.titre{
+    text-align: center;
+}
 /* Style du menu principal */
 .menu {
     list-style: none;
