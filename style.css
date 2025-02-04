@@ -61,6 +61,6 @@ body {
 }
 
 /* Affichage du sous-menu quand on passe la sourie */
-.dropdown:hover .submenu {
+.dropdown:hover .menu {
     display: block;
 }
