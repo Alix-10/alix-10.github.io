@@ -45,7 +45,7 @@
       var panoElement = document.getElementById('pano');
       var viewer = new Marzipano.Viewer(panoElement);
       var geometry = new Marzipano.EquirectGeometry([{ width: 4096 }]);
-      var imageSource = Marzipano.ImageUrlSource.fromString('chemin/vers/votre/image.jpg');
+      var imageSource = Marzipano.ImageUrlSource.fromString(panorama.jpg);
       var scene = viewer.createScene({
         source: imageSource,
         geometry: geometry,
