@@ -1,25 +1,22 @@
-// Sélection du conteneur où afficher la visite
-var panoContainer = document.getElementById('panorama');
+// Sélectionnez le conteneur
+var panoElement = document.getElementById('pano');
 
-// Création du viewer Marzipano
-var viewer = new Marzipano.Viewer(panoContainer);
+// Créez la visionneuse Marzipano
+var viewer = new Marzipano.Viewer(panoElement);
 
-// Chargement de l'image 360°
-var source = Marzipano.ImageUrlSource.fromString("images/panorama.jpg");
+// Définissez la géométrie de la scène (projection équirectangulaire)
+var geometry = new Marzipano.EquirectGeometry([{ width: 4096 }]);
 
-// Création de la géométrie pour une image équirectangulaire (360°)
-var geometry = new Marzipano.EquirectGeometry([{ width: 4000 }]);
+// Créez une source d'image pour votre image 360°
+var imageSource = Marzipano.ImageUrlSource.fromString(
+  'chemin/vers/votre/image.jpg'
+);
 
-// Définition de la vue (champ de vision et limites de rotation)
-var limiter = Marzipano.RectilinearView.limit.traditional(1024, 100 * Math.PI / 180);
-var view = new Marzipano.RectilinearView({ yaw: Math.PI }, limiter);
-
-// Création de la scène avec l'image
+// Créez la scène
 var scene = viewer.createScene({
-    source: source,
-    geometry: geometry,
-    view: view
+  source: imageSource,
+  geometry: geometry,
 });
 
-// Affichage de la scène
+// Affichez la scène
 scene.switchTo();

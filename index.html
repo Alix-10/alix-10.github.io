@@ -9,6 +9,14 @@
     <title>Site du BG </title>
     <!-- Lien vers la feuille de style CSS externe -->
     <link rel="stylesheet" href="style.css">
+    <!-- Import de Marzipano -->
+    <script src="https://cdn.jsdelivr.net/npm/marzipano@0.10.0/dist/marzipano.min.js"></script>
+    <style>
+        #pano {
+          width: 100%;
+          height: 500px;
+        }
+      </style>
 </head>
 <body>
 
@@ -31,12 +39,19 @@
         <iframe src="page1.html" name="content-frame" frameborder="0"></iframe>
     </main>
 
-    <!-- Conteneur pour l'affichage du panorama -->
-    <div id="panorama"></div>
+    <div id="pano"></div>
 
-    <!-- Import de Marzipano -->
-    <script src="https://www.marzipano.net/deliver/marzipano.min.js"></script>
-    <script src="script.js"></script>
+    <script>
+      var panoElement = document.getElementById('pano');
+      var viewer = new Marzipano.Viewer(panoElement);
+      var geometry = new Marzipano.EquirectGeometry([{ width: 4096 }]);
+      var imageSource = Marzipano.ImageUrlSource.fromString('chemin/vers/votre/image.jpg');
+      var scene = viewer.createScene({
+        source: imageSource,
+        geometry: geometry,
+      });
+      scene.switchTo();
+    </script>
 
     <!-- Pied de page du site -->
     <footer>
