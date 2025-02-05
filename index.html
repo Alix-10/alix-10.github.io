@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <!-- Définition de l'encodage des caractères pour supporter les accents -->
     <meta charset="UTF-8">
+    <!-- Permet un affichage responsive sur les différents appareils -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Titre de la page affiché dans l'onglet du navigateur -->
     <title>Site Esthétique</title>
+    <!-- Lien vers la feuille de style CSS externe -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- En-tête du site contenant la navigation -->
     <header>
         <nav>
             <ul>
+                <!-- Menu de navigation avec des liens vers différentes pages -->
                 <li><a href="page1.html" target="content-frame">Accueil</a></li>
                 <li><a href="page2.html" target="content-frame">Services</a></li>
                 <li><a href="page3.html" target="content-frame">À propos</a></li>
@@ -19,12 +26,24 @@
         </nav>
     </header>
 
+    <!-- Contenu principal du site -->
     <main>
+        <!-- Iframe permettant d'afficher dynamiquement le contenu des pages sans recharger toute la page -->
         <iframe src="page1.html" name="content-frame" frameborder="0"></iframe>
     </main>
 
+    <!-- Conteneur pour l'affichage du panorama -->
+    <div id="panorama"></div>
+
+    <!-- Import de Marzipano -->
+    <script src="https://www.marzipano.net/deliver/marzipano.min.js"></script>
+    <script src="script.js"></script>
+
+    <!-- Pied de page du site -->
     <footer>
+        <!-- Copyright et mention des droits -->
         <p>&copy; 2023 Mon Magnifique site. Tous droits réservés.</p>
     </footer>
+
 </body>
 </html>
