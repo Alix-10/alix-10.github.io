@@ -140,3 +140,14 @@ footer {
         height: 70vh; /* Réduction de la hauteur */
     }
 }
+/* Masquer le lien "Jeu" sur les appareils mobiles */
+.pc-only {
+    display: none;
+}
+
+/* Afficher le lien "Jeu" uniquement sur les écrans de PC */
+@media screen and (min-width: 992px) {
+    .pc-only {
+        display: inline-block; /* ou "block" selon votre mise en page */
+    }
+}
