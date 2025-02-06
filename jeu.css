@@ -1,0 +1,49 @@
+#snakeContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#snakeCanvas {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    border: 1px solid #00FF00;
+    background-color: #101010;
+}
+
+#snakeScoreWrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+#snakeScore {
+    font-size: 1rem;
+}
+
+#snakeBestScore {
+    font-size: 1rem;
+    color: #666;
+}
+
+#snakeRestartButton {
+    font-size: 1rem;
+    padding: 0.625rem 1rem;
+    background-color: #333;
+    color: #FFF;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    display: block;
+}
+
+#snakeRestartButton:hover {
+    background-color: #666;
+}
