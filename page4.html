@@ -1,134 +1,168 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title>Tetris</title>
-      <style>
-      .button {
-        background: url(https://www.designyourway.net/blog/wp-content/uploads/2017/03/Anime-Wallpaper-Desktop-Background-29-1250x834.jpg);
-        border: 5px solid #fff;
-        color: red;
-        border-radius: 8px;
-        padding: 20px 34px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 20px;
-        margin: 4px 2px;
-        cursor: pointer;
-      }
-        .button2 {
-        background: url(https://wallpaperaccess.com/full/435.jpg);
-        border: 5px solid #fff;
-        color: yellow;
-        border-radius: 8px;
-        padding: 20px 34px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 20px;
-        margin: 4px 2px;
-        cursor: pointer;
-      }
-        .button3 {
-        background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQD-M8AGt3kavxb5yyiPjs7iHGgw9IJnM4f4A&usqp=CAU);
-        border: 5px solid #fff;
-        color: green;
-        border-radius: 8px;
-        padding: 20px 34px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 20px;
-        margin: 4px 2px;
-        cursor: pointer;
-      }
-             .button4 {
-        background: url(https://image.shutterstock.com/image-illustration/anime-background-comic-speed-radial-260nw-1137313334.jpg);
-        border: 5px solid #fff;
-        color: blue;
-        border-radius: 8px;
-        padding: 20px 34px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 20px;
-        margin: 4px 2px;
-        cursor: pointer;
-      }
-                     .button5 {
-        background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTZD1uC4miJf5GhXBpV5c0defFncCWDzIBSXw&usqp=CAU);
-        border: 5px solid #fff;
-        color: pink;
-        border-radius: 8px;
-        padding: 20px 34px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 20px;
-        margin: 4px 2px;
-        cursor: pointer;
-      }
-                            .button6 {
-        background: url(https://c4.wallpaperflare.com/wallpaper/565/227/716/anime-original-girl-original-anime-wallpaper-preview.jpg);
-        border: 5px solid #fff;
-        color: orange;
-        border-radius: 8px;
-        padding: 20px 34px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 20px;
-        margin: 4px 2px;
-        cursor: pointer;
-      }
-                                   .button7 {
-        background: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/f82f73e8-9f41-4fc1-ba4c-736ceee6b58c/dcobh02-36f4eb8e-3be1-4218-bcf9-ec5e8657af5c.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvZjgyZjczZTgtOWY0MS00ZmMxLWJhNGMtNzM2Y2VlZTZiNThjXC9kY29iaDAyLTM2ZjRlYjhlLTNiZTEtNDIxOC1iY2Y5LWVjNWU4NjU3YWY1Yy5wbmcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.RieOts4q0pAYhSH3IvFtuqE0aE3ovl5r8FNMkl1Q8e4);
-        border: 5px solid #fff;
-        color: black;
-        border-radius: 8px;
-        padding: 20px 34px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 20px;
-        margin: 4px 2px;
-        cursor: pointer;
-      }
+<html>
+<head>
+  <title></title>
+  <style>
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
 
-          
+  body {
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  canvas {
+    border: 1px solid white;
+  }
+  </style>
+</head>
+<body>
+<canvas width="400" height="400" id="game"></canvas>
+<script>
+var canvas = document.getElementById('game');
+var context = canvas.getContext('2d');
 
-    </style>
-        <link rel="stylesheet" href="./tetris.css">
-    </head>
-    <body style = "background:url(https://wallup.net/wp-content/uploads/2018/09/26/1939-tetris-pattern-748x468.jpg)no-repeat; background-size: 100%;">
-             <a href="https://github.com/Plattyz" class="button">Ƥℓαттуz</a>
-      
-      <a href="https://github.com/Seryu-Ub" class="button2">𝕊𝕖𝕣𝕪𝕦-𝕌𝕓</a>
-      
-      <a href="https://github.com/Nyrok" class="button3">Nყrok</a>
-      
-       <a href="https://github.com/0x416c6265646f" class="button4">Aʟʙᴇᴅᴏ</a>
-      
-        <a href="https://github.com/Swixo" class="button5">𝓢𝔀𝓲𝔁𝓸</a>
-      
-       <a href="https://github.com/xFernius" class="button6">𝐹𝑒𝑟𝑛𝑖𝑢𝑠</a>
-      
-      <a href="https://github.com/Float154" class="button7">ℱ𝓁𝑜𝒶𝓉</a>
-      
-      <p style="color:yellow; font-size: 50px"><b>𝒞𝑜𝓂𝓂𝒶𝓃𝒹𝑒𝓈: </b></p>
-      
-      <p style="color:blue; font-size: 25px"><b>ℱ𝓁𝑒̂𝒸𝒽𝑒 𝒹𝓊 𝒽𝒶𝓊𝓉: 𝒸𝒽𝒶𝓃𝑔𝑒𝓇 𝓁𝒶 𝒹𝒾𝓇𝑒𝒸𝓉𝒾𝑜𝓃</b></p>
-      
-        <p style="color:red; font-size: 25px"><b>ℰ𝓈𝓅𝒶𝒸𝑒: 𝒹𝑒́𝓈𝒸𝑒𝓃𝒹𝓇𝑒 𝓇𝒶𝓅𝒾𝒹𝑒𝓂𝑒𝓃𝓉</b></p>
-      
-        <p style="color:cyan; font-size: 25px"><b>ℱ𝓁𝑒̂𝒸𝒽𝑒 𝑔𝒶𝓊𝒸𝒽𝑒: 𝒶𝓁𝓁𝑒𝓇 𝓋𝑒𝓇𝓈 𝓁𝒶 𝑔𝒶𝓊𝒸𝒽𝑒</b></p>
-
-      <p style="color:pink; font-size: 25px"><b>ℱ𝓁𝑒̂𝒸𝒽𝑒 𝒹𝓇𝑜𝒾𝓉𝑒: 𝒶𝓁𝓁𝑒𝓇 𝓋𝑒𝓇𝓈 𝓁𝒶 𝒹𝓇𝑜𝒾𝓉𝑒</b></p>
- 
+var grid = 16;
+var count = 0;
   
+var snake = {
+  x: 160,
+  y: 160,
+  
+  // snake velocity. moves one grid length every frame in either the x or y direction
+  dx: grid,
+  dy: 0,
+  
+  // keep track of all grids the snake body occupies
+  cells: [],
+  
+  // length of the snake. grows when eating an apple
+  maxCells: 4
+};
+var apple = {
+  x: 320,
+  y: 320
+};
+
+// get random whole numbers in a specific range
+// @see https://stackoverflow.com/a/1527820/2124254
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
+// game loop
+function loop() {
+  requestAnimationFrame(loop);
+
+  // slow game loop to 15 fps instead of 60 (60/15 = 4)
+  if (++count < 4) {
+    return;
+  }
+
+  count = 0;
+  context.clearRect(0,0,canvas.width,canvas.height);
+
+  // move snake by it's velocity
+  snake.x += snake.dx;
+  snake.y += snake.dy;
+
+  // wrap snake position horizontally on edge of screen
+  if (snake.x < 0) {
+    snake.x = canvas.width - grid;
+  }
+  else if (snake.x >= canvas.width) {
+    snake.x = 0;
+  }
+  
+  // wrap snake position vertically on edge of screen
+  if (snake.y < 0) {
+    snake.y = canvas.height - grid;
+  }
+  else if (snake.y >= canvas.height) {
+    snake.y = 0;
+  }
+
+  // keep track of where snake has been. front of the array is always the head
+  snake.cells.unshift({x: snake.x, y: snake.y});
+
+  // remove cells as we move away from them
+  if (snake.cells.length > snake.maxCells) {
+    snake.cells.pop();
+  }
+
+  // draw apple
+  context.fillStyle = 'red';
+  context.fillRect(apple.x, apple.y, grid-1, grid-1);
+
+  // draw snake one cell at a time
+  context.fillStyle = 'green';
+  snake.cells.forEach(function(cell, index) {
+    
+    // drawing 1 px smaller than the grid creates a grid effect in the snake body so you can see how long it is
+    context.fillRect(cell.x, cell.y, grid-1, grid-1);  
+
+    // snake ate apple
+    if (cell.x === apple.x && cell.y === apple.y) {
+      snake.maxCells++;
+
+      // canvas is 400x400 which is 25x25 grids 
+      apple.x = getRandomInt(0, 25) * grid;
+      apple.y = getRandomInt(0, 25) * grid;
+    }
+
+    // check collision with all cells after this one (modified bubble sort)
+    for (var i = index + 1; i < snake.cells.length; i++) {
       
-      <canvas id="tetris" width="220" height="400"></canvas>
-        <script src="./tetris.js" charset="utf-8"></script>
-    </body>
+      // snake occupies same space as a body part. reset game
+      if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
+        snake.x = 160;
+        snake.y = 160;
+        snake.cells = [];
+        snake.maxCells = 4;
+        snake.dx = grid;
+        snake.dy = 0;
+
+        apple.x = getRandomInt(0, 25) * grid;
+        apple.y = getRandomInt(0, 25) * grid;
+      }
+    }
+  });
+}
+
+// listen to keyboard events to move the snake
+document.addEventListener('keydown', function(e) {
+  // prevent snake from backtracking on itself by checking that it's 
+  // not already moving on the same axis (pressing left while moving
+  // left won't do anything, and pressing right while moving left
+  // shouldn't let you collide with your own body)
+  
+  // left arrow key
+  if (e.which === 37 && snake.dx === 0) {
+    snake.dx = -grid;
+    snake.dy = 0;
+  }
+  // up arrow key
+  else if (e.which === 38 && snake.dy === 0) {
+    snake.dy = -grid;
+    snake.dx = 0;
+  }
+  // right arrow key
+  else if (e.which === 39 && snake.dx === 0) {
+    snake.dx = grid;
+    snake.dy = 0;
+  }
+  // down arrow key
+  else if (e.which === 40 && snake.dy === 0) {
+    snake.dy = grid;
+    snake.dx = 0;
+  }
+});
+
+// start the game
+requestAnimationFrame(loop);
+</script>
+</body>
 </html>
