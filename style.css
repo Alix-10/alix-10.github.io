@@ -7,7 +7,12 @@ body, html {
     overflow: hidden; /* Désactive le défilement de la page */
 }
 
-
+/* Reset de base : normalise les styles sur tous les éléments */
+* {
+    margin: 0; /* Supprime les marges par défaut */
+    padding: 0; /* Supprime les espacements internes */
+    box-sizing: border-box; /* Inclut padding et border dans la largeur/hauteur */
+}
 
 
 /* Style général du body */
