@@ -4,8 +4,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 70%;
-    max-width: 70%;
+    width: 100%;
+    max-width: 100%;
     height: 100vh;
     margin: 0 auto;
     padding: 1rem;
@@ -13,8 +13,8 @@
 }
 
 #snakeCanvas {
-    width: 90vmin;
-    height: 90vmin;
+    width: 60vmin; /* Taille réduite */
+    height: 60vmin; /* Taille réduite */
     aspect-ratio: 1;
     border: 1px solid #00FF00;
     background-color: #101010;
@@ -23,7 +23,7 @@
 #snakeScoreWrapper {
     display: flex;
     justify-content: space-between;
-    width: 90vmin;
+    width: 60vmin; /* Même largeur que le canvas */
     margin-top: 1rem;
 }
 
@@ -45,7 +45,7 @@
     cursor: pointer;
     position: absolute;
     display: block;
-    bottom: 2rem;
+    bottom: 1rem; /* Position ajustée */
 }
 
 #snakeRestartButton:hover {
