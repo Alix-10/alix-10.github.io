@@ -1,3 +1,18 @@
+/*
+ * Copyright 2016 Google Inc. All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 'use strict';
 
 (function() {
@@ -9,7 +24,9 @@
   // Grab elements from DOM.
   var panoElement = document.querySelector('#pano');
   var sceneNameElement = document.querySelector('#titleBar .sceneName');
+  var sceneListElement = document.querySelector('#sceneList');
   var sceneElements = document.querySelectorAll('#sceneList .scene');
+
   var autorotateToggleElement = document.querySelector('#autorotateToggle');
   var fullscreenToggleElement = document.querySelector('#fullscreenToggle');
 
@@ -120,6 +137,26 @@
     document.body.classList.add('fullscreen-disabled');
   }
 
+  // Set handler for scene list toggle.
+
+
+  // Start with the scene list open on desktop.
+  if (!document.body.classList.contains('mobile')) {
+    showSceneList();
+  }
+
+  // Set handler for scene switch.
+  scenes.forEach(function(scene) {
+    var el = document.querySelector('#sceneList .scene[data-id="' + scene.data.id + '"]');
+    el.addEventListener('click', function() {
+      switchScene(scene);
+      // On mobile, hide scene list after selecting a scene.
+      if (document.body.classList.contains('mobile')) {
+        showSceneList();
+      }
+    });
+  });
+
   // DOM elements for view controls.
   var viewUpElement = document.querySelector('#viewUp');
   var viewDownElement = document.querySelector('#viewDown');
@@ -151,10 +188,37 @@
     scene.scene.switchTo();
     startAutorotate();
     updateSceneName(scene);
+    updateSceneList(scene);
   }
 
   function updateSceneName(scene) {
     sceneNameElement.innerHTML = sanitize(scene.data.name);
+  }
+
+  function updateSceneList(scene) {
+    for (var i = 0; i < sceneElements.length; i++) {
+      var el = sceneElements[i];
+      if (el.getAttribute('data-id') === scene.data.id) {
+        el.classList.add('current');
+      } else {
+        el.classList.remove('current');
+      }
+    }
+  }
+
+  function showSceneList() {
+    sceneListElement.classList.add('enabled');
+
+  }
+
+  function showSceneList() {
+    sceneListElement.classList.remove('enabled');
+
+  }
+
+  function toggleSceneList() {
+    sceneListElement.classList.toggle('enabled');
+
   }
 
   function startAutorotate() {
