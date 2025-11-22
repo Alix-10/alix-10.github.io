@@ -6,7 +6,7 @@ body, html {
     height: 100%; /* Prend toute la hauteur de l'écran */
     overflow: hidden; /* Désactive le défilement de la page */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Police principale */
-    background-color: #FF2A00; /* Couleur de fond */
+    background-color: #FFFFFF; /* Couleur de fond */
     color: #333; /* Couleur du texte */
 }
 
